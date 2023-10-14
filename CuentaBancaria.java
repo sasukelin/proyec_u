@@ -44,7 +44,7 @@ class CuentaBancaria {
                         retirar(cantidadRetiro);
                         break;
                     case 4:
-                        realizarTransaccion(); // Implementa la lógica para realizar transacciones
+                        realizarTransaccion(); 
                         break;
                     case 0:
                         System.out.println("Saliendo de la cuenta. ¡Hasta luego!");

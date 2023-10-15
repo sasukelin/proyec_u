@@ -73,18 +73,19 @@ class CuentaBancaria {
         }
     }
 
-    private void realizarTransaccion() {
-  System.out.println("Ingrese el valor de la transacción:");
-        String valorTransaccion = scanner.next();
-        System.out.println("Ingrese el monto de la transacción:");
-        double monto = scanner.nextDouble();
-        if (monto <= saldo) {
-            saldo -= monto;
-            System.out.println("Transacción realizada exitosamente. Saldo actual: " + saldo);
-            transacciones.add("Transacción (" + valorTransaccion + "): -" + monto);
-        } else {
-            System.out.println("Fondos insuficientes para realizar la transacción.");
-        }
+   private void realizarTransaccion(Scanner scanner) {
+    System.out.println("Ingrese el monto a transferir:");
+    double monto = scanner.nextDouble();
+    if (monto <= saldo) {
+        System.out.println("Ingrese el número de cuenta destino:");
+        String cuentaTransferir = scanner.next();
+        saldo -= monto;
+        System.out.println("Transferencia realizada exitosamente a la cuenta " + cuentaDestino +
+                ". Saldo actual: " + saldo);
+        transacciones.add("Transferencia a la cuenta " + cuentaTransferir + ": -" + monto);
+    } else {
+        System.out.println("Fondos insuficientes para realizar la transferencia.");
     }
+}
     }
 }

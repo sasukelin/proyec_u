@@ -74,6 +74,17 @@ class CuentaBancaria {
     }
 
     private void realizarTransaccion() {
-
+  System.out.println("Ingrese el detalle de la transacción:");
+        String detalle = scanner.next();
+        System.out.println("Ingrese el monto de la transacción:");
+        double monto = scanner.nextDouble();
+        if (monto <= saldo) {
+            saldo -= monto;
+            System.out.println("Transacción realizada exitosamente. Saldo actual: " + saldo);
+            transacciones.add("Transacción (" + detalle + "): -" + monto);
+        } else {
+            System.out.println("Fondos insuficientes para realizar la transacción.");
+        }
+    }
     }
 }

@@ -45,6 +45,8 @@ class CuentaBancaria {
                         break;
                     case 4:
                         realizarTransaccion(); 
+                      
+                     
                         break;
                     case 0:
                         System.out.println("Saliendo de la cuenta. ¡Hasta luego!");
@@ -74,7 +76,7 @@ class CuentaBancaria {
     }
 
    private void realizarTransaccion(Scanner scanner) {
-    System.out.println("Ingrese el monto a transferir:");
+    System.out.println("Ingrese el valor que desea transferir:");
     double monto = scanner.nextDouble();
     if (monto <= saldo) {
         System.out.println("Ingrese el número de cuenta destino:");
